@@ -52,29 +52,29 @@ export function Header() {
   };
 
   return (
-    <header className="fixed top-6 right-6 left-28 z-30 transition-all duration-300 md:left-auto md:w-auto">
-      <div className="glass-card rounded-[24px] px-4 py-2.5 flex items-center justify-between gap-6 w-full max-w-full">
-        <div className="flex items-center gap-3">
+    <header className="fixed top-4 md:top-6 right-4 md:right-6 left-4 md:left-auto md:w-auto z-30 transition-all duration-300 flex justify-center pointer-events-none">
+      <div className="glass-card rounded-[16px] md:rounded-[24px] px-2 md:px-4 py-2 flex items-center justify-between gap-2 md:gap-6 w-full md:w-auto max-w-full pointer-events-auto shadow-lg backdrop-blur-xl bg-black/40 border border-white/10">
+        <div className="flex items-center gap-2 md:gap-3">
           <button 
             onClick={toggleSidebar}
-            className="md:hidden p-2 text-white/50 hover:text-[#B6FF3B] hover:bg-white/5 rounded-xl transition-colors"
+            className="md:hidden p-2 text-white/90 hover:text-[#B6FF3B] bg-white/5 hover:bg-white/10 rounded-xl transition-colors active:scale-95"
           >
-            <Menu className="w-5 h-5" />
+            <Menu className="w-6 h-6" />
           </button>
           
-          <div ref={searchRef} className="relative hidden sm:block">
-            <div className="flex items-center px-4 py-1.5 bg-black/20 rounded-full border border-white/5 focus-within:border-[#B6FF3B]/30 transition-all shadow-inner">
-              <Search className="w-4 h-4 text-white/40" />
+          <div ref={searchRef} className="relative flex-1 md:block">
+            <div className="flex items-center px-3 md:px-4 py-1.5 md:py-1.5 bg-black/30 rounded-full border border-white/10 focus-within:border-[#B6FF3B]/50 transition-all shadow-inner w-full">
+              <Search className="w-4 h-4 text-white/50 shrink-0" />
               <input 
                 type="text" 
-                placeholder="Search report..." 
+                placeholder="Search..." 
                 value={searchQuery}
                 onChange={(e) => {
                   setSearchQuery(e.target.value);
                   setShowResults(true);
                 }}
                 onFocus={() => setShowResults(true)}
-                className="bg-transparent border-none outline-none text-sm text-[#e0e0e0] ml-2 placeholder:text-white/30 w-32 focus:w-48 transition-all duration-300"
+                className="bg-transparent border-none outline-none text-xs md:text-sm text-[#e0e0e0] ml-2 placeholder:text-white/30 w-full min-w-[100px] md:w-32 focus:w-full md:focus:w-48 transition-all duration-300"
               />
             </div>
             
@@ -105,7 +105,7 @@ export function Header() {
           </div>
         </div>
 
-        <div className="flex items-center gap-5 border-l border-white/10 pl-5">
+        <div className="flex items-center gap-2 md:gap-5 border-l border-white/10 pl-2 md:pl-5">
           <div className="hidden lg:flex flex-col items-end mr-2">
             <span className="text-[10px] font-bold tracking-widest text-white/40 uppercase">System Health</span>
             <div className="flex items-center gap-2 mt-0.5">
@@ -115,9 +115,9 @@ export function Header() {
           </div>
           <button 
             onClick={handleExport}
-            className="flex items-center gap-2 px-4 py-1.5 border border-[#B6FF3B]/20 text-[#B6FF3B] bg-[#B6FF3B]/5 hover:bg-[#B6FF3B]/10 rounded-full font-medium text-xs transition-all shadow-[0_2px_10px_rgba(182,255,59,0.05)]"
+            className="flex items-center gap-2 px-3 md:px-4 py-1.5 md:py-1.5 border border-[#B6FF3B]/20 text-[#B6FF3B] bg-[#B6FF3B]/5 hover:bg-[#B6FF3B]/10 rounded-full font-medium text-xs md:text-xs transition-all shadow-[0_2px_10px_rgba(182,255,59,0.05)] active:scale-95"
           >
-            <Download className="w-3.5 h-3.5" />
+            <Download className="w-4 h-4 md:w-3.5 md:h-3.5 shrink-0" />
             <span className="hidden sm:inline">Export OS</span>
           </button>
         </div>
