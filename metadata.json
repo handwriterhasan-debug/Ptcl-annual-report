@@ -1,0 +1,6 @@
+{
+  "name": "AetherNet Infrastructure Dashboard",
+  "description": "An interactive, cinematic React dashboard simulating a high-end telecommunications and AI network infrastructure report for 2026. Built with React, Tailwind CSS, Framer Motion, and Recharts.",
+  "requestFramePermissions": [],
+  "majorCapabilities": []
+}
